@@ -1,0 +1,15 @@
+-- DROP Table
+DROP TABLE files;
+DROP TABLE word_counts;
+-- CREATE TABLE
+CREATE TABLE files (line STRING);
+-- Load Data into Table
+LOAD DATA LOCAL INPATH '/root/file01.txt' INTO TABLE files;
+-- Create a new table using data from the files table
+CREATE TABLE word_counts AS
+SELECT word, count(1) AS count FROM
+(SELECT explode(split(line, ' ')) AS word FROM files) w
+GROUP BY word
+ORDER BY word;
+-- view data from table
+SELECT * FROM word_counts;
