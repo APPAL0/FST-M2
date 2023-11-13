@@ -1,0 +1,9 @@
+root@d8c38c54aa5c:/# hdfs dfs -ls /user/anup/textData/
+Found 2 items
+-rw-r--r--   1 root supergroup        507 2023-10-30 05:20 /user/anup/textData/csvFile.csv
+-rw-r--r--   1 root supergroup        158 2023-10-30 05:08 /user/anup/textData/txtFile.txt
+root@d8c38c54aa5c:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/anup/textData/csvFile.csv
+type:regular file permissions:644 root:supergroup size:507 name:csvFile.csv
+root@d8c38c54aa5c:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/anup/textData/txtFile.txt
+type:regular file permissions:644 root:supergroup size:158 name:txtFile.txt
+root@d8c38c54aa5c:/#

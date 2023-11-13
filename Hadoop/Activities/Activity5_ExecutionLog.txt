@@ -1,0 +1,69 @@
+root@d8c38c54aa5c:/# hive -f root/Activity5.hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-3.1.2-bin/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-3.3.1/share/hadoop/common/lib/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Hive Session ID = b2a8c942-1242-4215-b443-5030662c992e
+
+Logging initialized using configuration in jar:file:/usr/local/apache-hive-3.1.2-bin/lib/hive-common-3.1.2.jar!/hive-log4j2.properties Async: true
+Hive Session ID = 54582241-851f-458e-b404-a2a39a90022d
+OK
+Time taken: 4.008 seconds
+OK
+Time taken: 1.087 seconds
+Loading data to table default.employee
+OK
+Time taken: 1.053 seconds
+Query ID = root_20231113194938_accad7e4-797b-43ca-888b-04839f95d3fa
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1699468604553_0023, Tracking URL = http://d8c38c54aa5c:8088/proxy/application_1699468604553_0023/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1699468604553_0023
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2023-11-13 19:50:00,776 Stage-1 map = 0%,  reduce = 0%
+2023-11-13 19:50:09,647 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.16 sec
+MapReduce Total cumulative CPU time: 4 seconds 160 msec
+Ended Job = job_1699468604553_0023
+Moving data to local directory /root/export
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1   Cumulative CPU: 4.16 sec   HDFS Read: 5418 HDFS Write: 141 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 160 msec
+OK
+Time taken: 33.257 seconds
+OK
+2       Beatrice        Tech Support    2021    35330
+3       Vladimir        Human Resources 2020    51445
+5       Leslie  Customer Service        2021    59882
+6       Bernard IT      2021    50330
+8       Jerome  RnD     2021    45333
+9       Joshua  IT      2021    59538
+10      Keane   Human Resources 2022    46500
+14      Merrill Quality Assurance       2021    59660
+Time taken: 1.33 seconds, Fetched: 8 row(s)
+Query ID = root_20231113195012_4d7ab27c-ead6-43ec-a134-980118663137
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1699468604553_0024, Tracking URL = http://d8c38c54aa5c:8088/proxy/application_1699468604553_0024/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1699468604553_0024
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2023-11-13 19:50:31,503 Stage-1 map = 0%,  reduce = 0%
+2023-11-13 19:50:40,498 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 6.57 sec
+2023-11-13 19:50:51,423 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 11.98 sec
+MapReduce Total cumulative CPU time: 11 seconds 980 msec
+Ended Job = job_1699468604553_0024
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 11.98 sec   HDFS Read: 13227 HDFS Write: 102 SUCCESS
+Total MapReduce CPU Time Spent: 11 seconds 980 msec
+OK
+15
+Time taken: 39.799 seconds, Fetched: 1 row(s)
+root@d8c38c54aa5c:/#

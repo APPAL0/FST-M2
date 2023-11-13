@@ -7,4 +7,4 @@ grpd = GROUP words BY word;
 -- Count the occurence of each word (Reduce)
 cntd = FOREACH grpd GENERATE group, COUNT(words);
 -- Store the result in HDFS
-STORE cntd INTO 'hdfs:///user/anup/results';
+STORE cntd INTO 'hdfs:///user/anup/result';
