@@ -1,0 +1,83 @@
+PS C:\Users\092963744\Desktop\FSTM2\Cloud\simple_blog_api_ts-master> docker-compose up --build
+[+] Building 31.6s (13/13) FINISHED                                                                        docker:default 
+ => [api internal] load build definition from Dockerfile                                                             0.1s 
+ => => transferring dockerfile: 332B                                                                                 0.0s 
+ => [api internal] load .dockerignore                                                                                0.1s 
+ => => transferring context: 2B                                                                                      0.0s 
+ => [api internal] load metadata for docker.io/library/node:16-alpine                                               10.6s 
+ => [api auth] library/node:pull token for registry-1.docker.io                                                      0.0s 
+ => [api builder 1/6] FROM docker.io/library/node:16-alpine@sha256:a1f9d027912b58a7c75be7716c97cfbc6d3099f3a97ed84a  0.0s 
+ => [api internal] load build context                                                                                0.0s 
+ => => transferring context: 2.73kB                                                                                  0.0s 
+ => CACHED [api builder 2/6] WORKDIR /usr/app                                                                        0.0s 
+ => CACHED [api builder 3/6] COPY ./package.json ./                                                                  0.0s 
+ => CACHED [api builder 4/6] RUN npm install                                                                         0.0s 
+ => [api builder 5/6] COPY . .                                                                                       0.1s 
+ => [api builder 6/6] RUN npm run build                                                                             19.0s 
+ => CACHED [api stage-1 5/5] COPY --from=builder usr/app/dist .                                                      0.0s
+ => [api] exporting to image                                                                                         0.0s
+ => => exporting layers                                                                                              0.0s
+ => => writing image sha256:a1d5509b8f6ab21e35f19089d9b6f0fe44b8d4e5a8c326b7b82603036f2a0f07                         0.0s
+ => => naming to docker.io/anuppal17/simple-blog-api                                                                 0.0s
+[+] Running 3/3
+ ✔ Network simple_blog_api_ts-master_default          Created                                                        0.1s 
+ ✔ Container simple_blog_api_ts-master-postgres-db-1  Created                                                        0.1s 
+ ✔ Container simple_blog_api_ts-master-api-1          Created                                                        0.1s 
+Attaching to simple_blog_api_ts-master-api-1, simple_blog_api_ts-master-postgres-db-1
+simple_blog_api_ts-master-postgres-db-1  | The files belonging to this database system will be owned by user "postgres".
+simple_blog_api_ts-master-postgres-db-1  | This user must also own the server process.
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | The database cluster will be initialized with locale "en_US.utf8".
+simple_blog_api_ts-master-postgres-db-1  | The default database encoding has accordingly been set to "UTF8".
+simple_blog_api_ts-master-postgres-db-1  | The default text search configuration will be set to "english".
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | Data page checksums are disabled.
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | fixing permissions on existing directory /var/lib/postgresql/data ... ok       
+simple_blog_api_ts-master-postgres-db-1  | creating subdirectories ... ok
+simple_blog_api_ts-master-postgres-db-1  | selecting dynamic shared memory implementation ... posix
+simple_blog_api_ts-master-postgres-db-1  | selecting default max_connections ... 100
+simple_blog_api_ts-master-postgres-db-1  | selecting default shared_buffers ... 128MB
+simple_blog_api_ts-master-postgres-db-1  | selecting default time zone ... Etc/UTC
+simple_blog_api_ts-master-postgres-db-1  | creating configuration files ... ok
+simple_blog_api_ts-master-postgres-db-1  | running bootstrap script ... ok
+simple_blog_api_ts-master-postgres-db-1  | performing post-bootstrap initialization ... ok
+simple_blog_api_ts-master-postgres-db-1  | syncing data to disk ... ok
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | Success. You can now start the database server using:
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | initdb: warning: enabling "trust" authentication for local connections
+simple_blog_api_ts-master-postgres-db-1  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+simple_blog_api_ts-master-postgres-db-1  | waiting for server to start....2023-11-13 21:20:37.146 UTC [48] LOG:  starting 
+PostgreSQL 16.0 (Debian 16.0-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit       
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.151 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.165 UTC [51] LOG:  database system was shut down at 2023-11-13 21:20:36 UTC
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.178 UTC [48] LOG:  database system is ready to accept connections
+simple_blog_api_ts-master-postgres-db-1  |  done
+simple_blog_api_ts-master-postgres-db-1  | server started
+simple_blog_api_ts-master-postgres-db-1  | CREATE DATABASE
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*    
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.596 UTC [48] LOG:  received fast shutdown request
+simple_blog_api_ts-master-postgres-db-1  | waiting for server to shut down....2023-11-13 21:20:37.615 UTC [48] LOG:  aborting any active transactions
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.629 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.640 UTC [49] LOG:  shutting down
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.650 UTC [49] LOG:  checkpoint starting: shutdown immediate
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.884 UTC [49] LOG:  checkpoint complete: wrote 923 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.098 s, sync=0.099 s, total=0.245 s; sync files=301, longest=0.012 s, average=0.001 s; distance=4257 kB, estimate=4257 kB; lsn=0/19130D8, redo lsn=0/19130D8
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:37.897 UTC [48] LOG:  database system is shut down
+simple_blog_api_ts-master-postgres-db-1  |  done
+simple_blog_api_ts-master-postgres-db-1  | server stopped
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | PostgreSQL init process complete; ready for start up.
+simple_blog_api_ts-master-postgres-db-1  | 
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:38.045 UTC [1] LOG:  starting PostgreSQL 16.0 (Debian 16.0-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:38.046 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:38.046 UTC [1] LOG:  listening on IPv6 address "::", port 5432simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:38.056 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:38.070 UTC [64] LOG:  database system was shut down at 2023-11-13 21:20:37 UTC
+simple_blog_api_ts-master-postgres-db-1  | 2023-11-13 21:20:38.084 UTC [1] LOG:  database system is ready to accept connections
+simple_blog_api_ts-master-api-1          | ⚡Application running on port: 3000
