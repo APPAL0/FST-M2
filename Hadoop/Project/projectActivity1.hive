@@ -1,0 +1,11 @@
+-- Create Table
+CREATE TABLE episodes (name STRING, line STRING) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES ("skip.header.line.count"="2");
+-- Load input files into table
+LOAD DATA LOCAL INPATH '/root/episodeIV_dialogues.txt' INTO TABLE episodes;
+LOAD DATA LOCAL INPATH '/root/episodeV_dialogues.txt' INTO TABLE episodes;
+LOAD DATA LOCAL INPATH '/root/episodeVI_dialogues.txt' INTO TABLE episodes;
+-- Generate Output and view results
+INSERT OVERWRITE LOCAL DIRECTORY '/root/hivePOutput' ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+SELECT name, COUNT(name) AS no_of_lines from episodes GROUP BY name ORDER BY no_of_lines DESC;
+
